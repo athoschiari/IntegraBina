@@ -1,0 +1,20 @@
+object dc: Tdc
+  Left = 589
+  Height = 547
+  Top = 119
+  Width = 719
+  Caption = 'Data Component'
+  ClientHeight = 547
+  ClientWidth = 719
+  LCLVersion = '2.0.6.0'
+  object MemoPrint: TMemo
+    Left = 16
+    Height = 90
+    Top = 376
+    Width = 150
+    Lines.Strings = (
+      'MemoPrint'
+    )
+    TabOrder = 0
+  end
+end

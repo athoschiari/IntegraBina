@@ -1,0 +1,103 @@
+object Form1: TForm1
+  Left = 865
+  Height = 289
+  Top = 239
+  Width = 320
+  ClientHeight = 289
+  ClientWidth = 320
+  LCLVersion = '2.0.6.0'
+  object Label1: TLabel
+    Left = 56
+    Height = 15
+    Top = 234
+    Width = 24
+    Caption = 'DDD'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 103
+    Height = 15
+    Top = 234
+    Width = 26
+    Caption = 'Fone'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 15
+    Top = 234
+    Width = 29
+    Caption = 'Linha'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 24
+    Height = 15
+    Top = 106
+    Width = 29
+    Caption = 'Linha'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 8
+    Height = 15
+    Top = 17
+    Width = 152
+    Caption = 'Dados recebidos na porta nº:'
+    ParentColor = False
+  end
+  object Memo1: TMemo
+    Left = 8
+    Height = 185
+    Top = 43
+    Width = 273
+    Lines.Strings = (
+      'Memo1'
+    )
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 55
+    Height = 23
+    Top = 249
+    Width = 33
+    TabOrder = 1
+  end
+  object Edit3: TEdit
+    Left = 102
+    Height = 23
+    Top = 249
+    Width = 98
+    TabOrder = 2
+  end
+  object Edit1: TEdit
+    Left = 8
+    Height = 23
+    Top = 249
+    Width = 33
+    TabOrder = 3
+  end
+  object Button1: TButton
+    Left = 222
+    Height = 25
+    Top = 247
+    Width = 59
+    Caption = 'Limpar'
+    OnClick = Button1Click
+    TabOrder = 4
+  end
+  object Edit4: TEdit
+    Left = 154
+    Height = 23
+    Top = 13
+    Width = 127
+    TabOrder = 5
+  end
+  object IdUDPServer1: TIdUDPServer
+    Bindings = <>
+    DefaultPort = 0
+    OnUDPRead = IdUDPServer1UDPRead
+    left = 80
+    top = 64
+  end
+end

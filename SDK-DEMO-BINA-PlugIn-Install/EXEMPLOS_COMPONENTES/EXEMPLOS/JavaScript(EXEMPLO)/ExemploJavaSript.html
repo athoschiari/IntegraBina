@@ -1,0 +1,277 @@
+<html>
+<head>
+<style type="text/css">
+A { text-decoration:none; }
+A:link, A:visited { color:#0000ff; }
+A:hover { text-decoration: underline; color:#cc0000; }
+.txt {border:0px;}
+</style>
+<title>Sound Recorder ActiveX</title>
+</head>
+<body onload="Initialize();return true;" text="#000000" link="#000099" vlink="#330066">
+
+<script language="JavaScript" type="text/javascript">
+var PathPlugIn
+var RegNum
+var rLinha1
+var IP
+function Initialize()
+{
+	// Caminho completo do PlugIn
+	PathPlugIn = "C:\\PlugInRepeater\\PlugInBraiDRepeater.exe";
+	
+	// Seu número de registro (deixe em branco se não possuir - DEMO)
+	RegNum = "COLOQUE_AQUI_O_SE_NUMERO_DE_REGISTRO";
+	
+	// IP da máquina onde o PlugIn foi instalado
+	IP = "192.168.2.3"; 
+	
+	// Setagem padrão para a Linha 1
+	rLinha1 = 1;	
+	BraiDRepeaterX1.a4Remote_Port = 3821;
+	BraiDRepeaterX1.a5Local_Port = 6511;
+	BraiDRepeaterX1.a3Remote_IP = IP;
+	document.FOut.TPathPlugIn.value = PathPlugIn + " " +RegNum ;
+}
+
+function Start()
+{	
+	BraiDRepeaterX1.StartPlugIn(PathPlugIn, RegNum);
+	return false;
+}
+
+function Stop()
+{	
+	BraiDRepeaterX1.StopPlugIn ();
+	return false;
+}
+
+function AtivarLinha1()
+{
+	BraiDRepeaterX1.BraiDConnect(IP,rLinha1);
+	return false;
+}
+
+function Setup1()
+{	BraiDRepeaterX1.ShowConfig(1);
+	return true;
+}
+</script>
+
+<!-- Linha 1 -->
+<!-- Teclas recebidas  -->
+<script for="BraiDRepeaterX1" event="a4OnKeyEvent (Line, Key)">
+	document.FOut.TTeclas.value = document.FOut.TTeclas.value + Key;
+ 	document.FOut.TLinha.value = Line;
+</script>
+
+<!-- Status  -->
+<script for="BraiDRepeaterX1" event="a8OnSTatusEvent (Line, Status)">
+	document.FOut.TStatus.value = Status;
+ 	document.FOut.TLinha.value = Line;
+ 	BraiDRepeaterX1.Enabled = 1;
+ 	
+ 	// Limpa teclas recebidas ao colocar o fone no gancho //
+ 	if (Status && "OFF_HOOK")
+ 	{
+ 	document.FOut.TTeclas.value = "";
+ 	}
+ 	
+</script>
+
+<!-- Nome do arquivo de gravação em curso  -->
+<script for="BraiDRepeaterX1" event="a5OnFileRec (Line, FileName, Duraction)">
+	document.FOut.TFile.value = FileName;
+</script>
+
+<!-- Todoso os eventos  -->
+<script for="BraiDRepeaterX1" event="a7OnAllEvents (Texto)">
+	document.FOut.TEvents1.value = Texto;
+</script>
+
+<!-- DDD+Fone  -->
+<script for="BraiDRepeaterX1" event="a9OnIndexPhone (Line, IndexPhone)">
+	document.FOut.TLinha.value = Line;
+	document.FOut.TIndexFone.value = IndexPhone;
+</script>
+
+
+<table border="1" width="81%">
+  <tr>
+    <td width="100%"><b><font color="#000000"><font face="Arial">Exemplo de uso do </font><a href="http://www.softcab.com"><font face="Arial" color="#000000">Activex
+</font></a></font><a href="http://www.softcab.com"><font face="Arial" color="#800000">BraiDRepeater</font></a><font face="Arial" color="#000000">
+em JavaScript&nbsp; ( 1 linha)</font></b>
+      <div align="center">
+        <center>
+<table border="1" width="111%" height="33">
+  <tr>
+    <td width="9%" height="27" valign="top">
+<p align="left"><font face="Arial">Linha 1
+</font></p>
+<p align="left">
+<object classid="clsid:9ADC73A3-A79E-462E-85A0-3204825E9BE0" id="BraiDRepeaterX1" width="145" height="21">
+  <param name="Active" value="0">
+  <param name="a0NumberLine" value="1">
+  <param name="a1DDDLocal" value>
+  <param name="a2PlugInPath" value>
+  <param name="a3Remote_IP" value="127.0.0.1">
+  <param name="a4Remote_Port" value="0">
+  <param name="a5Local_Port" value="0">
+  <param name="a6Local_IP" value>
+  <param name="a7Calling" value="0">
+  <param name="a8InternetAcess" value="0">
+  <param name="a9HostBraiD" value="0">
+  <param name="AutoComplete" value="-1">
+  <param name="AutoDropDown" value="0">
+  <param name="AutoCloseUp" value="0">
+  <param name="BevelInner" value="2">
+  <param name="BevelKind" value="0">
+  <param name="BevelOuter" value="1">
+  <param name="Style" value="0">
+  <param name="CharCase" value="0">
+  <param name="Color" value="0">
+  <param name="Ctl3D" value="-1">
+  <param name="DragCursor" value="-12">
+  <param name="DragMode" value="0">
+  <param name="DropDownCount" value="8">
+  <param name="Enabled" value="0">
+  <param name="Font" value="MS Sans Serif">
+  <param name="ImeMode" value="3">
+  <param name="ImeName" value>
+  <param name="ItemHeight" value="13">
+  <param name="ItemIndex" value="-1">
+  <param name="MaxLength" value="0">
+  <param name="ParentColor" value="0">
+  <param name="ParentCtl3D" value="-1">
+  <param name="Sorted" value="0">
+  <param name="Text" value="(00) 0000-0000">
+  <param name="Visible" value="-1">
+  <param name="SelText" value>
+  <param name="DroppedDown" value="0">
+  <param name="SelLength" value="0">
+  <param name="SelStart" value="0">
+  <param name="DoubleBuffered" value="0">
+</object>
+</p>
+    </td>
+    <td width="152%" height="27" valign="middle" bgcolor="#A6CAF0" align="center">
+    &nbsp;<img border="0" src="LogoPlugInRepeater.bmp">
+    </td>
+  </tr>
+  <tr>
+    <td width="5%" height="27" valign="middle">
+<input type="button" value="Executar PlugIn" onClick="return Start();">
+    </td>
+    <td width="165%" height="27" valign="middle">
+    &nbsp;<input type="button" value="Ativar linha 1" onClick="return AtivarLinha1();">
+    <input type="button" value="Configurar" onClick="return Setup1();">
+    <input type="button" value="Finalizar PlugIn" onClick="return Stop();">
+    &nbsp;
+    </td>
+  </tr>
+</table>
+        </center>
+      </div>
+<form name=FOut>
+  <table border="1" width="97%">
+    <tr>
+      <td width="104%"><font face="Arial">Linha: </font><b><input type="text" value="" name="TLinha" size=4 class=txt readonly>
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width="104%"><font face="Arial">
+Status: </font><b><input type="text" value="" name="TStatus" size=98 class=txt readonly>
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width="104%"><font face="Arial">
+Teclas recebidas: </font><b><input type="text" value="" name="TTeclas" size=90 class=txt readonly>
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width="104%"><font face="Arial">Binagem: </font><b><input type="text" value="" name="TIndexFone" size=98 class=txt readonly>
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width="104%"><font face="Arial">
+Arquivo de gravação: </font><b><input type="text" value="" name="TFile" size=87 class=txt readonly>
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width="104%"><font face="Arial">PlugIn: </font><b><input type="text" value="" name="TPathPlugIn" size=102 class=txt readonly>
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td width="104%"><font face="Arial">Eventos: </font>
+        <b>
+      <input type="text" value="" name="TEvents1" size=100 class=txt readonly>
+        </b>
+      </td>
+    </tr>
+  </table>
+</form>
+    </td>
+  </tr>
+</table>
+
+<dl>
+  <dt>&nbsp;</dt>
+  <dt><font size="4" face="Arial" color="#FF0000">Atenção!&nbsp;</font></dt>
+  <dt><font size="4" face="Arial">Insira o Controle ActiveX <font color="#0000FF">BraiDRepeaterX
+    Control</font> nesta página</font></dt>
+  <dd>&nbsp;</dd>
+  <dt><font face="Arial" size="3" color="#FF0000">Setagens (em JavaScript):</font></dt>
+  <dt><font size="3" face="Arial">// Caminho completo do PlugIn</font></dt>
+  <dt><font COLOR="#800000" size="3" face="Arial">PathPlugIn =
+    &quot;C:\\PlugInRepeater\\PlugInBraiDRepeater.exe&quot;;</font></dt>
+  <font SIZE="1" COLOR="#800000">
+  <dt>&nbsp;</dt>
+  </font>
+  <dt><font size="3" face="Arial">// Seu número de registro
+    (deixe em branco se não possuir - DEMO)</font></dt>
+  <dt><font COLOR="#800000" size="3" face="Arial">RegNum =
+    &quot;SEU_NUMERO_DE_REGISTRO&quot;;</font></dt>
+  <font SIZE="1" COLOR="#800000">
+  <dt>&nbsp;</dt>
+  </font>
+  <dt><font COLOR="#800000" size="3" face="Arial">// IP da máquina onde o
+    PlugIn foi instalado (Nesta máquina ou na rede. Só use a opção
+    &quot;Ativar PlugIn&quot; se ele</font></dt>
+  <dt><font COLOR="#800000" size="3" face="Arial">&nbsp;estiver nesta máquina e
+    se já não estiver ativo)</font></dt>
+  <dt><font COLOR="#800000" size="3" face="Arial">IP = &quot;192.168.2.2&quot;;</font></dt>
+  <font SIZE="1" COLOR="#800000">
+  <dt>&nbsp;</dt>
+  </font>
+  <dt><font size="3" face="Arial">// Setagem padrão para a
+    Linha 1</font></dt>
+  <dt><font COLOR="#800000" size="3" face="Arial">BraiDRepeaterX1.a4Remote_Port
+    = 3821;</font></dt>
+  <dt><font COLOR="#800000" size="3" face="Arial">BraiDRepeaterX1.a5Local_Port =
+    6511;</font></dt>
+  <dt><font COLOR="#800000" size="3" face="Arial">BraiDRepeaterX1.a3Remote_IP =
+    IP;</font></dt>
+  <dt><font COLOR="#800000" size="3" face="Arial">document.FOut.TPathPlugIn.value
+    = PathPlugIn + &quot; &quot; +RegNum ;</font></dt>
+  <dd>&nbsp;</dd>
+  <dt><font face="Arial" size="3">Ativar o PlugIn</font></dt>
+  <dt><font COLOR="#800000" size="3" face="Arial">BraiDRepeaterX1.StartPlugIn(PathPlugIn,
+    RegNum);</font></dt>
+</dl>
+
+<dl>
+  <dt><font face="Arial" size="3">Ativar a Linha</font></dt>
+  <dt><font COLOR="#800000" size="3" face="Arial">BraiDRepeaterX1.StartPlugIn(PathPlugIn,
+    RegNum);</font></dt>
+</dl>
+
+<p>&nbsp;</p>
+
+</body>
+</html>

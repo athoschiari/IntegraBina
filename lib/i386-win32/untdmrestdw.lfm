@@ -1,0 +1,32 @@
+object dmRESTDW: TdmRESTDW
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Encoding = esUtf8
+  OnWelcomeMessage = DataModuleWelcomeMessage
+  Height = 216
+  HorizontalOffset = 928
+  VerticalOffset = 412
+  Width = 326
+  PPI = 96
+  object ServerEvents: TDWServerEvents
+    IgnoreInvalidParams = False
+    Events = <>
+    ContextName = 'APIBina'
+    left = 232
+    top = 32
+  end
+  object zLocalRESTDW: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'AutoEncodeStrings='
+      'controls_cp=GET_ACP'
+      'codepage='
+    )
+    TransactIsolationLevel = tiReadCommitted
+    Port = 0
+    Protocol = 'firebird'
+    left = 112
+    top = 64
+  end
+end

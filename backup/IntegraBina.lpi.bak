@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="Integração com Bina"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+        <TextName Value="DSAT.IntegraBina"/>
+        <TextDesc Value="Integração com Bina"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <BuildNr Value="1"/>
+      <Language Value="0416"/>
+      <StringTable CompanyName="DSAT Sistemas" FileDescription="Integração com Bina" ProductName="Integração com Bina" ProductVersion="1.0.0.1"/>
+    </VersionInfo>
+    <BuildModes Count="2">
+      <Item1 Name="Debug" Default="True"/>
+      <Item2 Name="Release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="IntegraBina"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="..\..\..\component_lazarus;..\..\..\component_lazarus\DataModule;..\..\..\component_lazarus\DComponent;..\..\..\component_lazarus\Funcoes;..\..\..\component_lazarus\Pesquisa;..\..\..\component_lazarus\Utilitarios"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf3"/>
+              <UseLineInfoUnit Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="//-dDEBUG"/>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0"/>
+    </RunParams>
+    <RequiredPackages Count="16">
+      <Item1>
+        <PackageName Value="CustomLabeledEdit"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="IDEIntf"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="RESTDWDriverZEOS"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="ACBrComum"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="pkedateedit"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="resteasyobjectscore"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="pkecripto"/>
+      </Item7>
+      <Item8>
+        <PackageName Value="pkNumericEdit"/>
+      </Item8>
+      <Item9>
+        <PackageName Value="DateTimeCtrls"/>
+      </Item9>
+      <Item10>
+        <PackageName Value="rxnew"/>
+      </Item10>
+      <Item11>
+        <PackageName Value="zcomponent"/>
+      </Item11>
+      <Item12>
+        <PackageName Value="LazControls"/>
+      </Item12>
+      <Item13>
+        <PackageName Value="MemDSLaz"/>
+      </Item13>
+      <Item14>
+        <PackageName Value="FCL"/>
+      </Item14>
+      <Item15>
+        <PackageName Value="indylaz"/>
+      </Item15>
+      <Item16>
+        <PackageName Value="LCL"/>
+      </Item16>
+    </RequiredPackages>
+    <Units Count="8">
+      <Unit0>
+        <Filename Value="IntegraBina.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="..\..\..\component_lazarus\DataModule\datamodule.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="DataModule"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\..\..\component_lazarus\DComponent\dcomponent.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dc"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="DComponent"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\..\..\component_lazarus\Funcoes\funcoes.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\..\component_lazarus\Pesquisa\untpesquisa.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPesquisa"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="untPesquisa"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\..\..\component_lazarus\Utilitarios\exportarxls.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ExportarXLS"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="untintegrador.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmIntegrador"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="untdmrestdw.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmRESTDW"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit7>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="IntegraBina"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="..\..\..\component_lazarus;..\..\..\component_lazarus\DataModule;..\..\..\component_lazarus\DComponent;..\..\..\component_lazarus\Funcoes;..\..\..\component_lazarus\Pesquisa;..\..\..\component_lazarus\Utilitarios"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <Optimizations>
+        <OptimizationLevel Value="0"/>
+      </Optimizations>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <UseHeaptrc Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CustomOptions Value="-dDEBUG"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="13" IgnoreAll="True">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="EIdConnClosedGracefully"/>
+      </Item4>
+      <Item5>
+        <Name Value="EConvertError"/>
+      </Item5>
+      <Item6>
+        <Name Value="EZSQLException"/>
+      </Item6>
+      <Item7>
+        <Name Value="EListError"/>
+      </Item7>
+      <Item8>
+        <Name Value="EThread"/>
+      </Item8>
+      <Item9>
+        <Name Value="RunError(203)"/>
+      </Item9>
+      <Item10>
+        <Name Value="EOutOfMemory"/>
+      </Item10>
+      <Item11>
+        <Name Value="EZIBSQLException"/>
+      </Item11>
+      <Item12>
+        <Name Value="EIdSocketError"/>
+      </Item12>
+      <Item13>
+        <Name Value="EAccessViolation"/>
+      </Item13>
+    </Exceptions>
+  </Debugging>
+</CONFIG>
