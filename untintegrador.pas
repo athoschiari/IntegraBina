@@ -69,6 +69,8 @@ type
     gb_Integracao: TGroupBox;
     gb_Sistema: TGroupBox;
     lb_ServerIP: TLabel;
+    m_LogAPI: TMemo;
+    m_LogUDPServer: TMemo;
     ned_PortLinha1: TNumericLabeledEdit;
     ned_PortLinha2: TNumericLabeledEdit;
     ned_PortLinha3: TNumericLabeledEdit;
@@ -76,6 +78,9 @@ type
     ned_PortLinha5: TNumericLabeledEdit;
     ned_PortLinha6: TNumericLabeledEdit;
     ned_LimiteLOG: TNumericLabeledEdit;
+    pc_Log: TPageControl;
+    ts_UDPServer: TTabSheet;
+    ts_LogGeral: TTabSheet;
     UDPServer: TIdUDPServer;
     ImagemTray: TImage;
     Label1: TLabel;
@@ -84,19 +89,19 @@ type
     lb_VersaoEXE: TLabel;
     lb_VersaoRESTDW: TLabel;
     lb_VersaoINDY: TLabel;
-    m_LogAPI: TMemo;
     m_Parametros: TMemo;
     NumericEdit2: TNumericEdit;
     ned_ServicePort: TNumericLabeledEdit;
-    PageControl1: TPageControl;
+    pc_Geral: TPageControl;
     pnl_Cabecalho: TPanel;
-    pnl_Cabecalho1: TPanel;
+    pnl_RodapeLOG: TPanel;
     pnl_Corpo: TPanel;
     ServiceNotification: TRESTDWServiceNotification;
     ServicePooler: TRESTServicePooler;
-    TabSheet1: TTabSheet;
-    TabSheet2: TTabSheet;
+    ts_Config: TTabSheet;
+    ts_Logs: TTabSheet;
     procedure btn_GravarParametrosClick(Sender: TObject);
+    procedure btn_LimparLogClick(Sender: TObject);
     procedure btn_ResetarParametrosClick(Sender: TObject);
     procedure btn_StartStopAPIServerClick(Sender: TObject);
     procedure btn_StartStopSincronizacaoClick(Sender: TObject);
@@ -116,6 +121,7 @@ type
     procedure EnviarParaTray;
     procedure RemoverTray(Restaurar: Boolean = True);
     procedure InsereLOG(Log: String; TipoLog: TTipoLog; APILog: Boolean = False);
+    procedure InsereLOGUDPServer(Log: String);
     procedure ExecTerminateProcess;
     procedure UDPServerAfterBind(Sender: TObject);
     procedure UDPServerBeforeBind(AHandle: TIdSocketHandle);
@@ -297,6 +303,9 @@ begin
   UDPServer.Active := False;
   if Sincronizacao then
     StartStopSincronizacao;
+
+  pc_Geral.TabIndex := 0;
+  pc_Log.TabIndex := 0;
 end;
 
 procedure TfrmIntegrador.FormKeyDown(Sender: TObject; var Key: Word;
@@ -342,12 +351,12 @@ begin
       //UDPServer.ReuseSocket   := rsTrue;
 
       //if UDPServer.Bindings.Count > 0 then begin
-      //  UDPServer.Bindings.Items[0].Free;
-      //  UDPServer.Bindings.Items[1].Free;
-      //  UDPServer.Bindings.Items[2].Free;
-      //  UDPServer.Bindings.Items[3].Free;
-      //  UDPServer.Bindings.Items[4].Free;
       //  UDPServer.Bindings.Items[5].Free;
+      //  UDPServer.Bindings.Items[4].Free;
+      //  UDPServer.Bindings.Items[3].Free;
+      //  UDPServer.Bindings.Items[2].Free;
+      //  UDPServer.Bindings.Items[1].Free;
+      //  UDPServer.Bindings.Items[0].Free;
       //end;
       //UDPServer.Bindings.Add.Port := PortLinha1;
       //UDPServer.Bindings.Add.Port := PortLinha2;
@@ -357,26 +366,32 @@ begin
       //UDPServer.Bindings.Add.Port := PortLinha6;
 
       //with UDPServer.Bindings.Add do begin
+      //  IPVersion := Id_IPv4;
       //  IP := '127.0.0.1';
       //  Port := PortLinha1;
       //end;
       //with UDPServer.Bindings.Add do begin
+      //  IPVersion := Id_IPv4;
       //  IP := '127.0.0.1';
       //  Port := PortLinha2;
       //end;
       //with UDPServer.Bindings.Add do begin
+      //  IPVersion := Id_IPv4;
       //  IP := '127.0.0.1';
       //  Port := PortLinha3;
       //end;
       //with UDPServer.Bindings.Add do begin
+      //  IPVersion := Id_IPv4;
       //  IP := '127.0.0.1';
       //  Port := PortLinha4;
       //end;
       //with UDPServer.Bindings.Add do begin
+      //  IPVersion := Id_IPv4;
       //  IP := '127.0.0.1';
       //  Port := PortLinha5;
       //end;
       //with UDPServer.Bindings.Add do begin
+      //  IPVersion := Id_IPv4;
       //  IP := '127.0.0.1';
       //  Port := PortLinha6;
       //end;
@@ -552,6 +567,11 @@ begin
   LogThread.AddEvent(Log, TipoLog = tlErro);
 end;
 
+procedure TfrmIntegrador.InsereLOGUDPServer(Log: String);
+begin
+  m_LogUDPServer.Lines.Add(FormatDateTime('dd/mm/yyyy hh:nn:ss', Now) + ' > ' + Log);
+end;
+
 procedure TfrmIntegrador.ExecTerminateProcess;
 begin
   if TerminateProcessOnClose then
@@ -560,25 +580,25 @@ end;
 
 procedure TfrmIntegrador.UDPServerAfterBind(Sender: TObject);
 begin
-  InsereLOG('Sincronização PlugInRepeater: AfterBind', tlInformativo);
+  InsereLOGUDPServer('AfterBind');
 end;
 
 procedure TfrmIntegrador.UDPServerBeforeBind(AHandle: TIdSocketHandle);
 begin
-  InsereLOG('Sincronização PlugInRepeater: BeforeBind', tlInformativo);
+  InsereLOGUDPServer('BeforeBind');
 end;
 
 procedure TfrmIntegrador.UDPServerStatus(ASender: TObject;
   const AStatus: TIdStatus; const AStatusText: string);
 begin
-  InsereLOG('Sincronização PlugInRepeater: OnStatus = "' + AStatusText + '"', tlInformativo);
+  InsereLOGUDPServer('Status = "' + AStatusText + '"');
 end;
 
 procedure TfrmIntegrador.UDPServerUDPException(AThread: TIdUDPListenerThread;
   ABinding: TIdSocketHandle; const AMessage: String;
   const AExceptionClass: TClass);
 begin
-  InsereLOG('Sincronização PlugInRepeater: Exception = "' + AMessage   + '"', tlErro);
+  InsereLOGUDPServer('Exception = "' + AMessage + '"');
 end;
 
 procedure TfrmIntegrador.UDPServerUDPRead(AThread: TIdUDPListenerThread;
@@ -591,18 +611,13 @@ var
   DadosFone,
   ToBeLogged: String;
 begin
-  // showmessage('received on port: ' + inttostr(ABinding.port));
-  // &&DATA_CODAREA->17@
-  // &&DATA_PHONE->3829-6381@
-  // &&L1_INDEX_PHONE->1738296381@
-  // &&L2_INDEX_PHONE->1738296381@
+  ToBeLogged := 'Dados processados -> "';
 
-  ToBeLogged := 'Sincronização PlugInRepeater: Dados processados -> "';
-
-  Dados := BytesToString(AData); //Ler
-  Dados := AnsiReplaceStr(Dados, '@', ''); //Remover "@" (Unit StrUtils)
-  Dados := AnsiReplaceStr(Dados, '&', ''); //Remover "&" (Unit StrUtils)
-  InsereLOG('Sincronização PlugInRepeater: Dados recebidos = "' + Dados + '"', tlResultado);
+  Dados := BytesToString(AData);
+  Dados := AnsiReplaceStr(Dados, '@', '');
+  Dados := AnsiReplaceStr(Dados, '&', '');
+  //InsereLOG('Sincronização PlugInRepeater: Dados recebidos = "' + Dados + '"', tlResultado);
+  InsereLOGUDPServer('Dados recebidos = "' + Dados + '"');
 
   //-----------------------------------------------------------------------------
   DadosDDD  := 'DATA_CODAREA->'; //Procurar DDD
@@ -611,12 +626,11 @@ begin
   DadosL2   := 'L2_INDEX_PHONE->';// Procurar linha 2 (aqui recebe, também, o DDD+Fone)
   //-----------------------------------------------------------------------------
 
-  // nº  da Linha
+  // nº da Linha
   if(Pos(DadosL1, Dados) > 0) then
     ToBeLogged := ToBeLogged + 'Linha = 1 <> '
   else if(Pos(DadosL2, Dados) > 0) then
     ToBeLogged := ToBeLogged + 'Linha = 2 <> ';
-
 
   //DDD
   if(Pos(DadosDDD, Dados) > 0) then
@@ -629,7 +643,8 @@ begin
   //-- Porta que recebeu os dados (sem nunhuma utilidade...)
   ToBeLogged := ToBeLogged + 'Port = ' + IntToStr(ABinding.Port);
 
-  InsereLOG(ToBeLogged + '"', tlResultado);
+  //InsereLOG('Sincronização PlugInRepeater: ' + ToBeLogged + '"', tlResultado);
+  InsereLOGUDPServer(ToBeLogged + '"');
 end;
 
 procedure TfrmIntegrador.WMSysCommand(var Msg: TWMSysCommand);
@@ -694,6 +709,18 @@ begin
   else begin
     GravarParametrosVisuais;
     MsgInformativo('Parâmetros gravados com sucesso!');
+  end;
+end;
+
+procedure TfrmIntegrador.btn_LimparLogClick(Sender: TObject);
+var
+  Iterador: Integer;
+begin
+  for Iterador := 0 to pc_Log.ActivePage.ControlCount - 1 do begin
+    if pc_Log.ActivePage.Controls[Iterador] is TMemo then begin
+      (pc_Log.ActivePage.Controls[Iterador] as TMemo).Lines.Text := '';
+      Exit;
+    end;
   end;
 end;
 

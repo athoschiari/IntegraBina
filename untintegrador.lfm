@@ -1610,16 +1610,16 @@ object frmIntegrador: TfrmIntegrador
     ParentColor = False
     ParentFont = False
     TabOrder = 1
-    object PageControl1: TPageControl
+    object pc_Geral: TPageControl
       Left = 0
       Height = 560
       Top = 0
       Width = 496
-      ActivePage = TabSheet1
+      ActivePage = ts_Logs
       Align = alClient
-      TabIndex = 0
+      TabIndex = 1
       TabOrder = 0
-      object TabSheet1: TTabSheet
+      object ts_Config: TTabSheet
         Caption = 'Configurações'
         ClientHeight = 530
         ClientWidth = 488
@@ -2384,32 +2384,14 @@ object frmIntegrador: TfrmIntegrador
           end
         end
       end
-      object TabSheet2: TTabSheet
+      object ts_Logs: TTabSheet
         Caption = 'Logs'
-        ClientHeight = 503
+        ClientHeight = 530
         ClientWidth = 488
-        object m_LogAPI: TMemo
-          Left = 0
-          Height = 470
-          Top = 0
-          Width = 488
-          Align = alClient
-          Font.CharSet = ANSI_CHARSET
-          Font.Color = clBlack
-          Font.Height = -11
-          Font.Name = 'Courier New'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentFont = False
-          ReadOnly = True
-          ScrollBars = ssAutoBoth
-          TabOrder = 0
-          WordWrap = False
-        end
-        object pnl_Cabecalho1: TPanel
+        object pnl_RodapeLOG: TPanel
           Left = 0
           Height = 33
-          Top = 470
+          Top = 497
           Width = 488
           Align = alBottom
           BevelColor = 12828860
@@ -2425,7 +2407,7 @@ object frmIntegrador: TfrmIntegrador
           Font.Quality = fqDraft
           ParentColor = False
           ParentFont = False
-          TabOrder = 1
+          TabOrder = 0
           object btn_LimparLog: TSpeedButton
             Cursor = crHandPoint
             Left = 343
@@ -2519,9 +2501,66 @@ object frmIntegrador: TfrmIntegrador
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000
             }
+            OnClick = btn_LimparLogClick
             ShowHint = True
             ParentFont = False
             ParentShowHint = False
+          end
+        end
+        object pc_Log: TPageControl
+          Left = 0
+          Height = 497
+          Top = 0
+          Width = 488
+          ActivePage = ts_UDPServer
+          Align = alClient
+          TabIndex = 1
+          TabOrder = 1
+          object ts_LogGeral: TTabSheet
+            Caption = 'Geral'
+            ClientHeight = 467
+            ClientWidth = 480
+            object m_LogAPI: TMemo
+              Left = 0
+              Height = 467
+              Top = 0
+              Width = 480
+              Align = alClient
+              Font.CharSet = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'Courier New'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              ScrollBars = ssAutoBoth
+              TabOrder = 0
+              WordWrap = False
+            end
+          end
+          object ts_UDPServer: TTabSheet
+            Caption = 'Integrador'
+            ClientHeight = 467
+            ClientWidth = 480
+            object m_LogUDPServer: TMemo
+              Left = 0
+              Height = 467
+              Top = 0
+              Width = 480
+              Align = alClient
+              Font.CharSet = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'Courier New'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              ParentFont = False
+              ReadOnly = True
+              ScrollBars = ssAutoBoth
+              TabOrder = 0
+              WordWrap = False
+            end
           end
         end
       end
@@ -2568,29 +2607,30 @@ object frmIntegrador: TfrmIntegrador
   end
   object UDPServer: TIdUDPServer
     OnStatus = UDPServerStatus
+    Active = True
     Bindings = <    
       item
-        IP = '0.0.0.0'
+        IP = '127.0.0.1'
         Port = 6511
       end    
       item
-        IP = '0.0.0.0'
+        IP = '127.0.0.1'
         Port = 6512
       end    
       item
-        IP = '0.0.0.0'
+        IP = '127.0.0.1'
         Port = 6513
       end    
       item
-        IP = '0.0.0.0'
+        IP = '127.0.0.1'
         Port = 6514
       end    
       item
-        IP = '0.0.0.0'
+        IP = '127.0.0.1'
         Port = 6515
       end    
       item
-        IP = '0.0.0.0'
+        IP = '127.0.0.1'
         Port = 6516
       end>
     DefaultPort = 0
