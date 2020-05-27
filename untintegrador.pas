@@ -75,6 +75,7 @@ type
     ned_PortLinha4: TNumericLabeledEdit;
     ned_PortLinha5: TNumericLabeledEdit;
     ned_PortLinha6: TNumericLabeledEdit;
+    ned_LimiteLOG: TNumericLabeledEdit;
     UDPServer: TIdUDPServer;
     ImagemTray: TImage;
     Label1: TLabel;
@@ -155,9 +156,10 @@ type
     LogaErro,
     EncodaBase64: Boolean;
     //Sistema
-    TerminateProcessOnClose: Boolean;
+    TerminateProcessOnClose,
     ServidorAPI,
     Sincronizacao: Boolean;
+    LimiteLOG: Integer;
   end;
 
 type
@@ -218,9 +220,9 @@ end;
 
 procedure TThreadedMsgEvent.InsereTextoLog;
 begin
-  if FMemo.Lines.Count > 300 then begin
+  if ((FMemo.Lines.Count > frmIntegrador.LimiteLOG) and (frmIntegrador.LimiteLOG > 0)) then begin
     FMemo.Lines.Text := FormatDateTime('dd/mm/yyyy hh:nn:ss', Now) +
-    ' ##> LOG resetado ao chegar em 300 registros. Número de erros acumulado: ' + IntToStr(FErrorCount);
+    ' ##> LOG resetado ao chegar em ' + IntToStr(frmIntegrador.LimiteLOG) + ' registros. Número de erros acumulado: ' + IntToStr(FErrorCount);
   end;
   FMemo.Lines.Add(GetEvent);
 end;
@@ -740,6 +742,7 @@ begin
     TerminateProcessOnClose := Parametros.ReadString('Sistema', 'TerminateProcessOnClose', 'S') = 'S';
     ServidorAPI             := Parametros.ReadString('Sistema', 'ServidorAPI', 'S') = 'S';
     Sincronizacao           := Parametros.ReadString('Sistema', 'Sincronizacao', 'S') = 'S';
+    LimiteLOG               := Parametros.ReadInteger('Sistema', 'LimiteLOG', 10000);
   finally
     try
       Parametros.Free;
@@ -787,6 +790,7 @@ begin
   CheckB_TerminateProcessOnClose.Checked  := TerminateProcessOnClose;
   CheckB_ServidorAPI.Checked              := ServidorAPI;
   CheckB_Sincronizacao.Checked            := Sincronizacao;
+  ned_LimiteLOG.AsInteger                 := LimiteLOG;
 end;
 
 procedure TfrmIntegrador.GravarParametros;
@@ -824,6 +828,7 @@ begin
     Parametros.WriteString('Sistema', 'TerminateProcessOnClose', BoolToStr(TerminateProcessOnClose, 'S', 'N'));
     Parametros.WriteString('Sistema', 'ServidorAPI', BoolToStr(ServidorAPI, 'S', 'N'));
     Parametros.WriteString('Sistema', 'Sincronizacao', BoolToStr(Sincronizacao, 'S', 'N'));
+    Parametros.WriteInteger('Sistema', 'LimiteLOG', LimiteLOG);
   finally
     try
       Parametros.Free;
@@ -858,6 +863,7 @@ begin
   TerminateProcessOnClose := CheckB_TerminateProcessOnClose.Checked;
   ServidorAPI             := CheckB_ServidorAPI.Checked;
   Sincronizacao           := CheckB_Sincronizacao.Checked;
+  LimiteLOG               := ned_LimiteLOG.AsInteger;
 
   GravarParametros;
 end;

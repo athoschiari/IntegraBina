@@ -1,7 +1,7 @@
 object frmIntegrador: TfrmIntegrador
-  Left = 347
+  Left = 587
   Height = 645
-  Top = 304
+  Top = 216
   Width = 512
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'INTEGRAÇÃO COM BINA - DSAT SISTEMAS'
@@ -1581,6 +1581,7 @@ object frmIntegrador: TfrmIntegrador
         'TerminateProcessOnClose=S'
         'ServidorAPI=S'
         'Sincronizacao=S'
+        'LimiteLOG=10000'
       )
       ParentFont = False
       TabOrder = 0
@@ -1853,8 +1854,8 @@ object frmIntegrador: TfrmIntegrador
             Left = 8
             Height = 21
             Top = 2
-            Width = 400
-            Caption = 'Forçar Terminate dos processos ao fechar módulo (Thread-Safe)'
+            Width = 349
+            Caption = 'Forçar Terminate dos processos ao fechar módulo (T.S.)'
             TabOrder = 0
           end
           object lb_ServerIP: TLabel
@@ -1872,6 +1873,26 @@ object frmIntegrador: TfrmIntegrador
             Font.Style = [fsBold]
             ParentColor = False
             ParentFont = False
+          end
+          object ned_LimiteLOG: TNumericLabeledEdit
+            Left = 386
+            Height = 25
+            Top = 24
+            Width = 78
+            Decimals = 0
+            DecimalRound = 0
+            MaxValue = 0
+            MinValue = 0
+            Value = 0
+            CurrencyValue = False
+            TabOrder = 1
+            Text = '0'
+            Alignment = taRightJustify
+            EditLabel.Height = 17
+            EditLabel.Width = 78
+            EditLabel.Caption = 'Limite LOG:'
+            EditLabel.ParentColor = False
+            EditLabel.Alignment = taRightJustify
           end
         end
         object btn_GravarParametros: TSpeedButton
