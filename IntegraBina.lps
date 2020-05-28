@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Debug"/>
-    <Units Count="67">
+    <Units Count="74">
       <Unit0>
         <Filename Value="IntegraBina.pas"/>
         <IsPartOfProject Value="True"/>
@@ -40,9 +40,8 @@
       <Unit3>
         <Filename Value="..\..\..\component_lazarus\Funcoes\funcoes.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="7"/>
-        <TopLine Value="93"/>
-        <CursorPos X="38" Y="125"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="43"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -74,8 +73,8 @@
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="696"/>
-        <CursorPos X="21" Y="719"/>
+        <TopLine Value="572"/>
+        <CursorPos X="44" Y="587"/>
         <UsageCount Value="211"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -86,7 +85,7 @@
         <ComponentName Value="dmRESTDW"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="42"/>
         <CursorPos X="58" Y="71"/>
         <UsageCount Value="200"/>
@@ -98,7 +97,7 @@
         <UnitName Value="LuiJSONHelpers"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="55"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="23"/>
       </Unit8>
       <Unit9>
         <Filename Value="untvincularproduto.pas"/>
@@ -109,7 +108,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="84"/>
         <CursorPos X="57" Y="100"/>
-        <UsageCount Value="126"/>
+        <UsageCount Value="124"/>
       </Unit9>
       <Unit10>
         <Filename Value="C:\lazarus206_x32\lcl\extctrls.pp"/>
@@ -117,14 +116,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="929"/>
         <CursorPos X="14" Y="996"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="32"/>
       </Unit10>
       <Unit11>
         <Filename Value="C:\lazarus206_x32\lcl\include\customtrayicon.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="252"/>
         <CursorPos X="43" Y="277"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="40"/>
       </Unit11>
       <Unit12>
         <Filename Value="C:\lazarus206_x32\lcl\widgetset\wsextctrls.pp"/>
@@ -132,7 +131,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="286"/>
         <CursorPos X="3" Y="308"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit12>
       <Unit13>
         <Filename Value="C:\lazarus206_x32\lcl\lclclasses.pp"/>
@@ -140,21 +139,21 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="29"/>
         <CursorPos X="3" Y="42"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
       </Unit13>
       <Unit14>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\rtl\win\wininc\messages.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="882"/>
         <CursorPos X="6" Y="1162"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="2"/>
       </Unit14>
       <Unit15>
         <Filename Value="C:\lazarus206_x32\lcl\interfaces\win32\win32trayicon.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="9" Y="20"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
       </Unit15>
       <Unit16>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\packages\winunits-base\src\shellapi.pp"/>
@@ -162,7 +161,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1616"/>
         <CursorPos X="8" Y="1678"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
       </Unit16>
       <Unit17>
         <Filename Value="C:\lazarus206_x32\lcl\lcltype.pp"/>
@@ -170,35 +169,35 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="2623"/>
         <CursorPos X="3" Y="2644"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="2"/>
       </Unit17>
       <Unit18>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\rtl\win\wininc\base.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="66"/>
         <CursorPos X="6" Y="87"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
       </Unit18>
       <Unit19>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\rtl\inc\systemh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="424"/>
         <CursorPos X="3" Y="445"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
       </Unit19>
       <Unit20>
         <Filename Value="C:\LazCompx32_206\RestDatawareSVN\CORE\Source\uRESTDWBase.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="7759"/>
         <CursorPos X="34" Y="7778"/>
-        <UsageCount Value="72"/>
+        <UsageCount Value="70"/>
       </Unit20>
       <Unit21>
         <Filename Value="C:\LazCompx32_206\RestDatawareSVN\CORE\Source\libs\uDWJSONObject.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="5105"/>
         <CursorPos X="67" Y="5128"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="19"/>
       </Unit21>
       <Unit22>
         <Filename Value="C:\lazarus206_x32\lcl\controls.pp"/>
@@ -206,19 +205,19 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1374"/>
         <CursorPos X="5" Y="1432"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
       </Unit22>
       <Unit23>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\packages\fcl-db\src\base\db.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="531"/>
         <CursorPos X="14" Y="554"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit23>
       <Unit24>
         <Filename Value="C:\LazCompx32_206\RestDatawareSVN\CORE\Source\uRESTDWReg.pas"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit24>
       <Unit25>
         <Filename Value="C:\lazarus206_x32\components\ideintf\propedits.pp"/>
@@ -226,14 +225,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1125"/>
         <CursorPos X="3" Y="1148"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit25>
       <Unit26>
         <Filename Value="C:\LazCompx32_206\NumericEdit\numericedit.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="142"/>
         <CursorPos X="44" Y="166"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
       </Unit26>
       <Unit27>
         <Filename Value="C:\lazarus206_x32\lcl\stdctrls.pp"/>
@@ -241,20 +240,20 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1488"/>
         <CursorPos X="3" Y="1511"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit27>
       <Unit28>
         <Filename Value="C:\lazarus206_x32\lcl\include\boundlabel.inc"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="22" Y="21"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit28>
       <Unit29>
         <Filename Value="C:\LazCompx32_206\RestDatawareSVN\CORE\Source\libs\uDWConsts.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="143"/>
         <CursorPos X="55" Y="170"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="7"/>
       </Unit29>
       <Unit30>
         <Filename Value="C:\LazCompx32_206\CustomLabeledEdit\Source\numericlabelededit.pas"/>
@@ -262,35 +261,35 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="151"/>
         <CursorPos X="13" Y="189"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
       </Unit30>
       <Unit31>
         <Filename Value="C:\LazCompx32_206\CustomLabeledEdit\Source\customlabelededitcore.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="40"/>
         <CursorPos X="15" Y="74"/>
-        <UsageCount Value="48"/>
+        <UsageCount Value="46"/>
       </Unit31>
       <Unit32>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\rtl\objpas\sysutils\sysstrh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="185"/>
         <CursorPos X="10" Y="208"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit32>
       <Unit33>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\packages\fcl-db\src\base\fields.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1472"/>
         <CursorPos X="59" Y="1490"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit33>
       <Unit34>
         <Filename Value="C:\LazCompx32_206\ZeosLib\src\component\ZDataset.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="46"/>
         <CursorPos X="30" Y="74"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit34>
       <Unit35>
@@ -298,7 +297,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="552"/>
         <CursorPos X="33" Y="576"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit35>
       <Unit36>
@@ -307,7 +306,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="38"/>
         <CursorPos X="7" Y="64"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit36>
       <Unit37>
         <Filename Value="C:\LazCompx32_206\CustomLabeledEdit\Source\timelabelededit.pas"/>
@@ -315,7 +314,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="45"/>
         <CursorPos X="7" Y="68"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit37>
       <Unit38>
         <Filename Value="C:\lazarus206_x32\components\ideintf\componenteditors.pas"/>
@@ -323,7 +322,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="210"/>
         <CursorPos X="31" Y="247"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit38>
       <Unit39>
         <Filename Value="C:\lazarus206_x32\lcl\forms.pp"/>
@@ -331,34 +330,34 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1759"/>
         <CursorPos X="22" Y="1782"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit39>
       <Unit40>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\rtl\objpas\classes\classesh.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="528"/>
-        <CursorPos X="14" Y="551"/>
-        <UsageCount Value="7"/>
+        <TopLine Value="550"/>
+        <CursorPos X="17" Y="574"/>
+        <UsageCount Value="12"/>
       </Unit40>
       <Unit41>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\rtl\objpas\classes\compon.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="373"/>
         <CursorPos X="3" Y="376"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit41>
       <Unit42>
         <Filename Value="C:\LazCompx32_206\CustomLabeledEdit\Source\datelabelededit.pas"/>
         <UnitName Value="DateLabeledEdit"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="3"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit42>
       <Unit43>
         <Filename Value="C:\LazCompx32_206\CustomLabeledEdit\Source\customlabelededitreg.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="14" Y="13"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit43>
       <Unit44>
         <Filename Value="C:\LazCompx32_206\CustomLabeledEdit\Source\masklabelededit.pas"/>
@@ -366,7 +365,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="37"/>
         <CursorPos X="7" Y="68"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit44>
       <Unit45>
         <Filename Value="C:\LazCompx32_206\CustomLabeledEdit\Source\labeledmemo.pas"/>
@@ -374,33 +373,33 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="56"/>
         <CursorPos X="7" Y="68"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit45>
       <Unit46>
         <Filename Value="C:\LazCompx32_206\CustomLabeledEdit\Source\numericlabelededit_icon.lrs"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="32" Y="6"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit46>
       <Unit47>
         <Filename Value="C:\LazCompx32_206\CustomLabeledEdit\Package\customlabelededit.pas"/>
         <UnitName Value="CustomLabeledEdit"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="18"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit47>
       <Unit48>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\packages\fcl-json\src\fpjson.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="18"/>
         <CursorPos X="6" Y="44"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit48>
       <Unit49>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\packages\fcl-stl\src\gqueue.pp"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="15" Y="29"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit49>
       <Unit50>
         <Filename Value="..\..\Manutencao\OrcamentoVenda\untOrcamentoVenda.pas"/>
@@ -408,21 +407,21 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="622"/>
         <CursorPos X="46" Y="650"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="2"/>
       </Unit50>
       <Unit51>
         <Filename Value="C:\LazCompx32_206\Indy10\Lib\System\IdBaseComponent.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="293"/>
         <CursorPos X="24" Y="304"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit51>
       <Unit52>
         <Filename Value="C:\LazCompx32_206\Indy10\Lib\System\IdVers.inc"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="16"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit52>
       <Unit53>
@@ -431,43 +430,39 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="42"/>
-        <CursorPos X="54" Y="68"/>
-        <UsageCount Value="50"/>
+        <TopLine Value="40"/>
+        <CursorPos X="13" Y="73"/>
+        <UsageCount Value="63"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit53>
       <Unit54>
         <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdThread.pas"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="290"/>
         <CursorPos X="37" Y="297"/>
-        <UsageCount Value="31"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="40"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit54>
       <Unit55>
         <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdUDPServer.pas"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="154"/>
-        <CursorPos X="30" Y="183"/>
-        <UsageCount Value="14"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="35" Y="20"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit55>
       <Unit56>
         <Filename Value="untintegrador.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit56>
       <Unit57>
         <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="162"/>
-        <CursorPos X="21" Y="180"/>
-        <UsageCount Value="16"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="726"/>
+        <CursorPos X="29" Y="750"/>
+        <UsageCount Value="28"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit57>
       <Unit58>
@@ -476,7 +471,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="115"/>
         <CursorPos X="44" Y="160"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit58>
       <Unit59>
         <Filename Value="C:\lazarus206_x32\lcl\editbtn.pas"/>
@@ -484,7 +479,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="330"/>
         <CursorPos X="3" Y="353"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit59>
       <Unit60>
         <Filename Value="..\ControlePonto\untintegrador.pas"/>
@@ -492,176 +487,225 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit60>
       <Unit61>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\rtl\win\wininc\ascdef.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="251"/>
         <CursorPos X="10" Y="274"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="4"/>
       </Unit61>
       <Unit62>
         <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdUDPBase.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="315"/>
-        <CursorPos X="30" Y="337"/>
-        <UsageCount Value="7"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="139"/>
+        <CursorPos X="14" Y="160"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit62>
       <Unit63>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\rtl\objpas\classes\collect.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="298"/>
-        <CursorPos X="3" Y="318"/>
-        <UsageCount Value="7"/>
+        <CursorPos X="37" Y="318"/>
+        <UsageCount Value="12"/>
       </Unit63>
       <Unit64>
         <Filename Value="C:\lazarus206_x32\fpc\3.0.4\source\rtl\objpas\sysutils\filutilh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="127"/>
         <CursorPos X="10" Y="150"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
       </Unit64>
       <Unit65>
         <Filename Value="C:\LazCompx32_206\Indy10\Lib\System\IdComponent.pas"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="49"/>
         <CursorPos X="3" Y="72"/>
-        <UsageCount Value="14"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="23"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit65>
       <Unit66>
         <Filename Value="C:\LazCompx32_206\Indy10\Lib\System\IdGlobal.pas"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="1337"/>
         <CursorPos X="26" Y="1359"/>
-        <UsageCount Value="10"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="19"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit66>
+      <Unit67>
+        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdRegisterCore.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="603"/>
+        <CursorPos X="29" Y="628"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="C:\LazCompx32_206\Indy10\Lib\indylaz.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit68>
+      <Unit69>
+        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Protocols\IdRegister.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit69>
+      <Unit70>
+        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdCoreDsnRegister.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="22"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Protocols\IdDsnRegister.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="29" Y="13"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="SDK-DEMO-BINA-PlugIn-Install\EXEMPLOS_COMPONENTES\COMPONENTES\Componente(ver-1.5)\Repeater.pas"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="1179"/>
+        <CursorPos X="58" Y="903"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit72>
+      <Unit73>
+        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdUDPClient.pas"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="115"/>
+        <CursorPos X="81" Y="145"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit73>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="untintegrador.pas"/>
-        <Caret Line="522" Column="3" TopLine="518"/>
+        <Caret Line="375" Column="48" TopLine="356"/>
       </Position1>
       <Position2>
-        <Filename Value="untintegrador.pas"/>
-        <Caret Line="568" Column="65" TopLine="545"/>
+        <Filename Value="SDK-DEMO-BINA-PlugIn-Install\EXEMPLOS_COMPONENTES\COMPONENTES\Componente(ver-1.5)\Repeater.pas"/>
+        <Caret Line="42" Column="32" TopLine="193"/>
       </Position2>
       <Position3>
-        <Filename Value="untintegrador.pas"/>
-        <Caret Line="123" Column="15" TopLine="101"/>
+        <Filename Value="SDK-DEMO-BINA-PlugIn-Install\EXEMPLOS_COMPONENTES\COMPONENTES\Componente(ver-1.5)\Repeater.pas"/>
+        <Caret Line="124" Column="15" TopLine="102"/>
       </Position3>
       <Position4>
         <Filename Value="untintegrador.pas"/>
-        <Caret Line="122" Column="23" TopLine="101"/>
+        <Caret Line="376" Column="44" TopLine="357"/>
       </Position4>
       <Position5>
         <Filename Value="untintegrador.pas"/>
-        <Caret Line="522" Column="3" TopLine="518"/>
+        <Caret Line="375" Column="44" TopLine="356"/>
       </Position5>
       <Position6>
-        <Filename Value="untintegrador.pas"/>
-        <Caret Line="123" Column="33" TopLine="100"/>
+        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdUDPBase.pas"/>
+        <Caret Line="354" Column="24" TopLine="336"/>
       </Position6>
       <Position7>
-        <Filename Value="untintegrador.pas"/>
-        <Caret Line="568" Column="21" TopLine="565"/>
+        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdUDPBase.pas"/>
+        <Caret Line="160" Column="57" TopLine="139"/>
       </Position7>
       <Position8>
-        <Filename Value="untintegrador.pas"/>
-        <Caret Line="122" Column="21" TopLine="101"/>
+        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdUDPBase.pas"/>
+        <Caret Line="112" Column="15" TopLine="89"/>
       </Position8>
       <Position9>
-        <Filename Value="untintegrador.pas"/>
-        <Caret Line="562" Column="84" TopLine="524"/>
+        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdUDPBase.pas"/>
+        <Caret Line="354" Column="35" TopLine="336"/>
       </Position9>
       <Position10>
-        <Filename Value="untintegrador.pas"/>
-        <Caret Line="346" Column="37" TopLine="324"/>
+        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdUDPClient.pas"/>
       </Position10>
       <Position11>
-        <Filename Value="untintegrador.pas"/>
-        <Caret Line="306" Column="28" TopLine="271"/>
+        <Filename Value="SDK-DEMO-BINA-PlugIn-Install\EXEMPLOS_COMPONENTES\COMPONENTES\Componente(ver-1.5)\Repeater.pas"/>
+        <Caret Line="805" Column="46" TopLine="777"/>
       </Position11>
       <Position12>
-        <Filename Value="untintegrador.pas"/>
-        <Caret Line="370" Column="22" TopLine="354"/>
+        <Filename Value="SDK-DEMO-BINA-PlugIn-Install\EXEMPLOS_COMPONENTES\COMPONENTES\Componente(ver-1.5)\Repeater.pas"/>
+        <Caret Line="125" Column="23" TopLine="105"/>
       </Position12>
       <Position13>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <Caret Line="147" Column="14" TopLine="124"/>
+        <Filename Value="SDK-DEMO-BINA-PlugIn-Install\EXEMPLOS_COMPONENTES\COMPONENTES\Componente(ver-1.5)\Repeater.pas"/>
+        <Caret Line="701" Column="60" TopLine="678"/>
       </Position13>
       <Position14>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <Caret Line="137" Column="3" TopLine="124"/>
+        <Filename Value="SDK-DEMO-BINA-PlugIn-Install\EXEMPLOS_COMPONENTES\COMPONENTES\Componente(ver-1.5)\Repeater.pas"/>
+        <Caret Line="100" Column="15" TopLine="78"/>
       </Position14>
       <Position15>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <Caret Line="154" Column="3" TopLine="124"/>
+        <Filename Value="untintegrador.pas"/>
+        <Caret Line="387" Column="51" TopLine="375"/>
       </Position15>
       <Position16>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <Caret Line="137" Column="3" TopLine="124"/>
+        <Filename Value="untintegrador.pas"/>
+        <Caret Line="386" Column="51" TopLine="374"/>
       </Position16>
       <Position17>
         <Filename Value="untintegrador.pas"/>
-        <Caret Line="370" Column="22" TopLine="354"/>
+        <Caret Line="349" Column="31" TopLine="331"/>
       </Position17>
       <Position18>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <Caret Line="241" Column="14" TopLine="220"/>
+        <Filename Value="untintegrador.pas"/>
+        <Caret Line="592" Column="3" TopLine="590"/>
       </Position18>
       <Position19>
         <Filename Value="untintegrador.pas"/>
-        <Caret Line="369" Column="9" TopLine="354"/>
+        <Caret Line="597" Column="3" TopLine="590"/>
       </Position19>
       <Position20>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <Caret Line="147" Column="14" TopLine="124"/>
+        <Filename Value="untintegrador.pas"/>
+        <Caret Line="603" Column="3" TopLine="590"/>
       </Position20>
       <Position21>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <Caret Line="137" Column="3" TopLine="124"/>
+        <Filename Value="untintegrador.pas"/>
+        <Caret Line="610" Column="35" TopLine="590"/>
       </Position21>
       <Position22>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <Caret Line="154" Column="3" TopLine="124"/>
+        <Filename Value="untintegrador.pas"/>
+        <Caret Line="622" Column="6" TopLine="611"/>
       </Position22>
       <Position23>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <Caret Line="157" Column="15" TopLine="124"/>
+        <Filename Value="untintegrador.pas"/>
+        <Caret Line="124" Column="15" TopLine="102"/>
       </Position23>
       <Position24>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <Caret Line="149" Column="56" TopLine="121"/>
+        <Filename Value="untintegrador.pas"/>
+        <Caret Line="581" Column="3" TopLine="533"/>
       </Position24>
       <Position25>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <Caret Line="147" Column="16" TopLine="121"/>
+        <Filename Value="untintegrador.pas"/>
+        <Caret Line="187" Column="15" TopLine="164"/>
       </Position25>
       <Position26>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdSocketHandle.pas"/>
-        <Caret Line="389" Column="25" TopLine="351"/>
+        <Filename Value="untintegrador.pas"/>
+        <Caret Line="238" Column="3" TopLine="311"/>
       </Position26>
       <Position27>
-        <Filename Value="C:\LazCompx32_206\Indy10\Lib\Core\IdUDPServer.pas"/>
-        <Caret Line="83" Column="12" TopLine="113"/>
+        <Filename Value="untintegrador.pas"/>
+        <Caret Line="123" Column="15" TopLine="101"/>
       </Position27>
       <Position28>
         <Filename Value="untintegrador.pas"/>
-        <Caret Line="380" Column="30" TopLine="343"/>
+        <Caret Line="381" Column="36" TopLine="357"/>
       </Position28>
       <Position29>
         <Filename Value="untintegrador.pas"/>
-        <Caret Line="403" Column="57" TopLine="367"/>
+        <Caret Line="635" Column="46" TopLine="616"/>
       </Position29>
       <Position30>
         <Filename Value="untintegrador.pas"/>
-        <Caret Line="721" Column="72" TopLine="690"/>
+        <Caret Line="124" Column="15" TopLine="102"/>
       </Position30>
     </JumpHistory>
     <RunParams>

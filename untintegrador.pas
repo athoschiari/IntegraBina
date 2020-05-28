@@ -15,9 +15,9 @@ uses
   FileNameLabeledEdit, ZDbcIntfs, uDWResponseTranslator, uRESTDWServerEvents,
   uRESTDWBase, uRESTDWPoolerDB, IDText, IdWhois, IdHTTP, IdGlobal, uDWConsts,
   IdComponent, Messages, IdAuthentication, IdIPAddrMon, IdHTTPServer,
-  IdUDPServer, ShellAPI, LazUTF8, CheckBoxThemed, MaskUtils, StrUtils,
-  DateUtils, winsock, contnrs, JwaTlHelp32, process, Windows, syncobjs, gqueue,
-  IdSocketHandle;
+  IdMappedPortUDP, IdUDPServer, ShellAPI, LazUTF8, CheckBoxThemed, MaskUtils,
+  StrUtils, DateUtils, winsock, contnrs, JwaTlHelp32, process, Windows,
+  syncobjs, gqueue, IdSocketHandle, IdUDPClient;
 
 const
   WM_ICONMESSAGES = WM_USER + 100;
@@ -347,54 +347,48 @@ begin
       //except
       //end;
       //UDPServer := TIdUDPServer.Create(nil);
-      //UDPServer.ThreadedEvent := True;
-      //UDPServer.ReuseSocket   := rsTrue;
+      ////UDPServer.ThreadedEvent := True;
+      //UDPServer.ReuseSocket   := rsFalse;
 
-      //if UDPServer.Bindings.Count > 0 then begin
-      //  UDPServer.Bindings.Items[5].Free;
-      //  UDPServer.Bindings.Items[4].Free;
-      //  UDPServer.Bindings.Items[3].Free;
-      //  UDPServer.Bindings.Items[2].Free;
-      //  UDPServer.Bindings.Items[1].Free;
-      //  UDPServer.Bindings.Items[0].Free;
-      //end;
-      //UDPServer.Bindings.Add.Port := PortLinha1;
-      //UDPServer.Bindings.Add.Port := PortLinha2;
-      //UDPServer.Bindings.Add.Port := PortLinha3;
-      //UDPServer.Bindings.Add.Port := PortLinha4;
-      //UDPServer.Bindings.Add.Port := PortLinha5;
-      //UDPServer.Bindings.Add.Port := PortLinha6;
+      if UDPServer.Bindings.Count > 0 then begin
+        UDPServer.Bindings.Items[5].Free;
+        UDPServer.Bindings.Items[4].Free;
+        UDPServer.Bindings.Items[3].Free;
+        UDPServer.Bindings.Items[2].Free;
+        UDPServer.Bindings.Items[1].Free;
+        UDPServer.Bindings.Items[0].Free;
+      end;
 
-      //with UDPServer.Bindings.Add do begin
-      //  IPVersion := Id_IPv4;
-      //  IP := '127.0.0.1';
-      //  Port := PortLinha1;
-      //end;
-      //with UDPServer.Bindings.Add do begin
-      //  IPVersion := Id_IPv4;
-      //  IP := '127.0.0.1';
-      //  Port := PortLinha2;
-      //end;
-      //with UDPServer.Bindings.Add do begin
-      //  IPVersion := Id_IPv4;
-      //  IP := '127.0.0.1';
-      //  Port := PortLinha3;
-      //end;
-      //with UDPServer.Bindings.Add do begin
-      //  IPVersion := Id_IPv4;
-      //  IP := '127.0.0.1';
-      //  Port := PortLinha4;
-      //end;
-      //with UDPServer.Bindings.Add do begin
-      //  IPVersion := Id_IPv4;
-      //  IP := '127.0.0.1';
-      //  Port := PortLinha5;
-      //end;
-      //with UDPServer.Bindings.Add do begin
-      //  IPVersion := Id_IPv4;
-      //  IP := '127.0.0.1';
-      //  Port := PortLinha6;
-      //end;
+      with UDPServer.Bindings.Add do begin
+        IPVersion := Id_IPv4;
+        IP := '127.0.0.1';
+        Port := PortLinha1;
+      end;
+      with UDPServer.Bindings.Add do begin
+        IPVersion := Id_IPv4;
+        IP := '127.0.0.1';
+        Port := PortLinha2;
+      end;
+      with UDPServer.Bindings.Add do begin
+        IPVersion := Id_IPv4;
+        IP := '127.0.0.1';
+        Port := PortLinha3;
+      end;
+      with UDPServer.Bindings.Add do begin
+        IPVersion := Id_IPv4;
+        IP := '127.0.0.1';
+        Port := PortLinha4;
+      end;
+      with UDPServer.Bindings.Add do begin
+        IPVersion := Id_IPv4;
+        IP := '127.0.0.1';
+        Port := PortLinha5;
+      end;
+      with UDPServer.Bindings.Add do begin
+        IPVersion := Id_IPv4;
+        IP := '127.0.0.1';
+        Port := PortLinha6;
+      end;
 
       UDPServer.Active := True;
 
@@ -552,6 +546,9 @@ begin
   end;
 
   Log := FormatDateTime('dd/mm/yyyy hh:nn:ss', Now) + ' ' + Log;
+  Log := ReplaceStr(Log, #13#10, ' <EOL> ');
+  Log := ReplaceStr(Log, #13, ' <CR> ');
+  Log := ReplaceStr(Log, #10, ' <LF> ');
 
   try
     if Assigned(LogThread) then begin
@@ -569,7 +566,17 @@ end;
 
 procedure TfrmIntegrador.InsereLOGUDPServer(Log: String);
 begin
-  m_LogUDPServer.Lines.Add(FormatDateTime('dd/mm/yyyy hh:nn:ss', Now) + ' > ' + Log);
+  Log := '>>> ' + Log;
+
+  Log := FormatDateTime('dd/mm/yyyy hh:nn:ss', Now) + ' ' + Log;
+
+  Log := ReplaceStr(Log, #13#10, ' <EOL> ');
+  Log := ReplaceStr(Log, #13, ' <CR> ');
+  Log := ReplaceStr(Log, #10, ' <LF> ');
+
+  Log := ReplaceStr(Log, ' <CRLF> ', #13#10 + ' >>> ');
+
+  m_LogUDPServer.Lines.Add(Log);
 end;
 
 procedure TfrmIntegrador.ExecTerminateProcess;
@@ -605,46 +612,42 @@ procedure TfrmIntegrador.UDPServerUDPRead(AThread: TIdUDPListenerThread;
   const AData: TIdBytes; ABinding: TIdSocketHandle);
 var
   Dados,
+  DadosProcessados: AnsiString;
   DadosDDD,
   DadosL1,
   DadosL2,
-  DadosFone,
-  ToBeLogged: String;
+  DadosFone: String;
 begin
-  ToBeLogged := 'Dados processados -> "';
+  DadosProcessados := '';
 
   Dados := BytesToString(AData);
   Dados := AnsiReplaceStr(Dados, '@', '');
   Dados := AnsiReplaceStr(Dados, '&', '');
-  //InsereLOG('Sincronização PlugInRepeater: Dados recebidos = "' + Dados + '"', tlResultado);
-  InsereLOGUDPServer('Dados recebidos = "' + Dados + '"');
 
-  //-----------------------------------------------------------------------------
-  DadosDDD  := 'DATA_CODAREA->'; //Procurar DDD
-  DadosFone := 'DATA_PHONE->';   //Procurar Phone
-  DadosL1   := 'L1_INDEX_PHONE->';// Procurar linha 1 (aqui recebe, também, o DDD+Fone)
-  DadosL2   := 'L2_INDEX_PHONE->';// Procurar linha 2 (aqui recebe, também, o DDD+Fone)
-  //-----------------------------------------------------------------------------
+  DadosDDD  := 'DATA_CODAREA->';
+  DadosFone := 'DATA_PHONE->';
+  DadosL1   := 'L1_INDEX_PHONE->';
+  DadosL2   := 'L2_INDEX_PHONE->';
 
-  // nº da Linha
   if(Pos(DadosL1, Dados) > 0) then
-    ToBeLogged := ToBeLogged + 'Linha = 1 <> '
+    DadosProcessados := DadosProcessados + 'Linha = 1 <> '
   else if(Pos(DadosL2, Dados) > 0) then
-    ToBeLogged := ToBeLogged + 'Linha = 2 <> ';
+    DadosProcessados := DadosProcessados + 'Linha = 2 <> ';
 
-  //DDD
   if(Pos(DadosDDD, Dados) > 0) then
-    ToBeLogged := ToBeLogged + 'DDD = ' + Copy(Dados, Pos(DadosDDD, Dados) + Length(DadosDDD), 2) + ' <> ';
+    DadosProcessados := DadosProcessados + 'DDD = ' + Copy(Dados, Pos(DadosDDD, Dados) + Length(DadosDDD), 2) + ' <> ';
 
-  //Fone
   if(Pos(DadosFone, Dados) > 0) then
-   ToBeLogged := ToBeLogged + 'Fone = ' + Copy(Dados, Pos(DadosFone, Dados) + Length(DadosFone), 30) + ' <> ';
+   DadosProcessados := DadosProcessados + 'Fone = ' + Copy(Dados, Pos(DadosFone, Dados) + Length(DadosFone), 30) + ' <> ';
 
-  //-- Porta que recebeu os dados (sem nunhuma utilidade...)
-  ToBeLogged := ToBeLogged + 'Port = ' + IntToStr(ABinding.Port);
+  Dados := 'Dados recebidos na porta ' + IntToStr(ABinding.Port) + ' = <CRLF> "' + Dados + '"';
+  InsereLOGUDPServer(Dados);
+  if Trim(DadosProcessados) <> '' then begin
+    DadosProcessados := 'Dados processados -> <CRLF> "' + DadosProcessados + '"';
+    InsereLOGUDPServer(DadosProcessados);
+  end;
 
-  //InsereLOG('Sincronização PlugInRepeater: ' + ToBeLogged + '"', tlResultado);
-  InsereLOGUDPServer(ToBeLogged + '"');
+
 end;
 
 procedure TfrmIntegrador.WMSysCommand(var Msg: TWMSysCommand);

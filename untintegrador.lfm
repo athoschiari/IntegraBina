@@ -2607,38 +2607,14 @@ object frmIntegrador: TfrmIntegrador
   end
   object UDPServer: TIdUDPServer
     OnStatus = UDPServerStatus
-    Active = True
-    Bindings = <    
-      item
-        IP = '127.0.0.1'
-        Port = 6511
-      end    
-      item
-        IP = '127.0.0.1'
-        Port = 6512
-      end    
-      item
-        IP = '127.0.0.1'
-        Port = 6513
-      end    
-      item
-        IP = '127.0.0.1'
-        Port = 6514
-      end    
-      item
-        IP = '127.0.0.1'
-        Port = 6515
-      end    
-      item
-        IP = '127.0.0.1'
-        Port = 6516
-      end>
+    Bindings = <>
     DefaultPort = 0
+    ReuseSocket = rsFalse
     OnBeforeBind = UDPServerBeforeBind
     OnAfterBind = UDPServerAfterBind
     OnUDPRead = UDPServerUDPRead
     OnUDPException = UDPServerUDPException
-    left = 280
+    left = 256
     top = 80
   end
 end
