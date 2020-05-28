@@ -3,3 +3,5 @@
 /backup
 /IntegraBina.exe
 /iphist.dat
+/SDK-DEMO-BINA-PlugIn-Install/*
+!/SDK-DEMO-BINA-PlugIn-Install/*.zip
